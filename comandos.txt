@@ -1,0 +1,67 @@
+Comandos GitHub
+
+* git checkout -- <file>
+    - Descarta cambios
+
+* git reset <código del commit>
+    - Deshace el cambio pero lo deja en el stag
+
+* git diff
+    - Para ver las diferencias
+
+* git resert --hard
+    -- Elimina el commit y también lo elimina del stage
+
+* git diff <commit> <commit>
+    - Ver las diferencias entre commits
+
+* git diff HEAD~1 HEAD
+    - Ver diferencias entre HEAD y HEAD menos uno
+
+* git revert --no-commit HEAD
+    - Hace un revert pero no hace un commit
+
+* git tag <nombre> <commit opcional>
+    - Te cra un tag
+
+* git tag -a <nombre>
+    - Te crea un tag anotado, donde puedes meter doc
+
+* git stash 
+    - Te guarda los cambios en el stash para poder dejar pendiente trabajo
+
+* git stash list
+    - Ver lo que hay en el stash
+
+* git stash apply
+    - Saca del stash el ultimo guardado, funciona como pila, ultimo en entrar primero en salir
+
+* git stash drop
+    - Te el stash una vez que hayas recuperado lo guardado
+
+* git stash save "Descripción"
+    - Guarda cambios pendientes en el stash con un mensaje
+
+* git stash pop 
+    - Te saca el ultimo guardado del stash y te lo elimina del stash
+
+* git pull --resabe origin <rama>
+    -- Te ordena los commits por fecha y NO CREA COMMITS NUEVOS, el más viejo antes, y no hace ningún merge del pull
+
+* git rebase -i HEAD~2 
+    - Hará un rebase interactivo con el número de commits = 2, el dos en este ejemplo es la cantidad de commits
+
+* git rebase -i origin/master
+    - Eso se hace para empatar tu rama con master y poder ejecutar correctamente los pull request sin conflictos
+
+* Siempre que se hace un pull request se tiene que asegurar que no haya conflictos, y si los hay siempre crear un rebase de master
+
+* git commit --amend -m "<mensaje nuevo>"
+    - Editar el mensaje del commit
+
+* git reset --hard <rama-funcionalidad>
+    - Se tiene que ir a dev, y en dev aplciar este comando, este comando es para resetar dev con todos los cambios de la rema de funcionalidad desde la cual se haga el reset
+
+* git reset --soft master
+    - Esto se aplica para poner tu rama de funcionalidad al nivel de master pero te guarda tus cambios en el staging para después ingeresar tus cambios en un commit
+
